@@ -3,116 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO FENCE Srebrenik</title>
+    <title>PRO FENCE SREBRENIK</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* TOTALNI ANTRACIT /
-        html, body { 
-            background-color: #1a1f22 !important; 
-            margin: 0; padding: 0; 
-            color: #ffffff; 
-            font-family: 'Montserrat', sans-serif;
-            min-height: 100vh;
-        }
+        /* OSNOVNI STIL I RESET */ { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
 
-        .container { 
-            max-width: 450px; 
-            margin: 0 auto; 
-            padding: 10px 20px; 
-            box-sizing: border-box; 
-        }
-        
-        / FIKSIRANA MALA NASLOVNA SLIKA /
-        .logo-box { 
-            width: 100%; 
-            display: flex; 
-            justify-content: center; 
-            padding: 20px 0; 
-        }
-        .logo-box img { 
-            width: 100px !important; / Striktno mala veličina /
-            height: 100px !important; / Prisiljava kvadratni oblik ako treba /
-            object-fit: contain;
-            border-radius: 50%; / Ovo je čini elegantnom i okruglom ako je logo takav /
-            background: #2c3439;
-            padding: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
-
-        .header-text { text-align: center; margin-bottom: 25px; }
-        h1 { font-size: 20px; font-weight: 700; text-transform: uppercase; margin: 0; color: #fff; letter-spacing: 1px; }
-        .slogan { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 2px; }
-
-        / DUGMAD 2x2 /
-        .btn-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 12px; 
-            margin-bottom: 30px; 
-        }
-        .btn { 
-            background: linear-gradient(145deg, #2c3439, #1a1f22);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 15px;
-            padding: 18px 5px;
-            text-decoration: none;
-            color: white !important;
+        /* ZAGLAVLJE (HERO SEKCIJA) /
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1505322101000-19457cff32ba?auto=format&fit=crop&q=80&w=1500'); / Zamijeni sa svojom slikom ograde /
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 8px;
-            font-weight: 700;
-            font-size: 11px;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
         }
-        .btn i { font-size: 22px; }
+
+        .hero-content h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+
+        / DUGMAD ZA KONTAKT /
+        .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .btn {
+            padding: 12px 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+        }
+        .viber { background-color: #7360f2; }
+        .facebook { background-color: #1877f2; }
+        .location { background-color: #ea4335; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); opacity: 0.9; }
+
+        / GALERIJA RADOVA /
+        .section-padding { padding: 60px 10%; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #222; }
         
-        / BOJE */
-        .fa-whatsapp { color: #25D366; }
-        .fa-viber { color: #7360f2; }
-        .fa-route { color: #4285F4; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-        h2 { font-size: 14px; text-transform: uppercase; color: #aaa; margin-top: 30px; text-align: center; border-bottom: 1px solid #2c3439; padding-bottom: 8px; }
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .card:hover { transform: scale(1.02); }
         
-        .galerija img { width: 100%; border-radius: 12px; margin-top: 15px; }
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; / Ovo rješava problem odsječenih slika /
+            display: block;
+        }
+        .card-info { padding: 15px; text-align: center; font-weight: bold; }
 
-        .map-box { margin-top: 15px; border-radius: 15px; overflow: hidden; }
+        / MAPA SEKCIJA /
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        iframe { width: 100%; height: 100%; border: none; }
 
-        footer { text-align: center; padding: 40px 0; color: #444; font-size: 9px; }
+        / RESPONSIVE (Mobitel) */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .section-padding { padding: 40px 5%; }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="logo-box">
-        <img src="logo.jpg" alt="PRO FENCE" onerror="this.style.display='none'">
-    </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>PRO FENCE SREBRENIK</h1>
+            <p>Najmodernije ograde i kapije u regiji</p>
+            <div class="btn-group">
+                <a href="viber://chat?number=%2B38761000000" class="btn viber">Viber</a>
+                <a href="https://facebook.com/tvojapage" class="btn facebook">Facebook</a>
+                <a href="#lokacija" class="btn location">Naša Lokacija</a>
+            </div>
+        </div>
+    </header>
 
-    <div class="header-text">
-        <h1>PRO FENCE SREBRENIK</h1>
-        <p class="slogan">Premium sistemi ogradivanja</p>
-    </div>
+    <section class="section-padding">
+        <h2 class="section-title">Naši Radovi</h2>
+        <div class="gallery-grid">
+            <div class="card">
+                <img src="slika1.jpg" alt="Panelna ograda">
+                <div class="card-info">Panelne ograde</div>
+            </div>
+            <div class="card">
+                <img src="slika2.jpg" alt="Metalna kapija">
+                <div class="card-info">Moderne kapije</div>
+            </div>
+            <div class="card">
+                <img src="slika3.jpg" alt="Ograda dvorište">
+                <div class="card-info">Dizajnerska rješenja</div>
+            </div>
+        </div>
+    </section>
 
-    <div class="btn-grid">
-        <a href="tel:+38762912480" class="btn"><i class="fas fa-phone-alt"></i> POZIV</a>
-        <a href="https://wa.me/38762912480" class="btn"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
-        <a href="viber://add?number=38762912480" class="btn"><i class="fab fa-viber"></i> VIBER</a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=44.6644,18.5284" target="_blank" class="btn"><i class="fas fa-route"></i> LOKACIJA</a>
-    </div>
+    <section id="lokacija" class="section-padding" style="background-color: #eee;">
+        <h2 class="section-title">Gdje se nalazimo?</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d2839.467341851!2d18.4842!3d44.7077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47593c6f96613309%3A0x7d6c42976d8b0222!2sSrebrenik!5e0!3m2!1sbs!2sba!4v1700000000000!5m2!1sbs!2sba" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
 
-    <h2>Galerija Radova</h2>
-    <div class="galerija">
-        <img src="panelne_ograde.jpg" onerror="this.style.display='none'">
-        <img src="automatske_kapije.jpg" onerror="this.style.display='none'">
-    </div>
-
-    <h2>Mapa</h2>
-    <div class="map-box">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2847.652156828859!2d18.5283!3d44.6644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDM5JzUxLjgiTiAxOMKwMzEnNDEuOSJF!5e0!3m2!1sbs!2sba!4v1700000000000!5m2!1sbs!2sba" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-
-    <footer>© 2026 PRO FENCE SREBRENIK</footer>
-</div>
+    <footer style="text-align: center; padding: 20px; background: #222; color: white;">
+        <p>&copy; 2024 PRO FENCE SREBRENIK - Sva prava zadržana</p>
+    </footer>
 
 </body>
 </html>
