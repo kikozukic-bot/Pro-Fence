@@ -3,61 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO FENCE Srebrenik | Proizvodnja Ograda</title>
+    <title>PRO FENCE Srebrenik</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #1a1a1a; line-height: 1.6; }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #1a1a1a; }
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .logo-container { text-align: center; padding: 20px 0; }
-        .logo-container img { max-width: 250px; height: auto; display: block; margin: 0 auto; border-radius: 8px; }
-        .header-info { text-align: left; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 30px; }
-        h1 { font-size: 38px; font-weight: 700; text-transform: uppercase; margin: 0; letter-spacing: -1px; }
-        .slogan { font-size: 16px; color: #666; text-transform: uppercase; letter-spacing: 3px; font-weight: 400; }
-        h2.section-title { font-size: 26px; border-left: 6px solid #1a1a1a; padding-left: 15px; margin-top: 60px; text-transform: uppercase; font-weight: 700; }
         
-        /* Stil za dugmad /
-        .contact-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0; }
-        .btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 15px; border-radius: 10px; text-decoration: none; color: white !important; font-weight: bold; flex: 1; min-width: 140px; transition: 0.3s; font-size: 14px; text-align: center; }
+        /* Centriran Logo /
+        .logo-container { text-align: center; padding: 40px 0; }
+        .logo-container img { max-width: 350px; width: 90%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        .header-info { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 32px; font-weight: 700; text-transform: uppercase; margin: 0; letter-spacing: 2px; }
+        .slogan { font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 4px; margin-top: 5px; }
+
+        / Simetrični i veliki gumbi /
+        .contact-buttons { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 15px; 
+            margin: 40px 0; 
+            width: 100%;
+        }
+        .btn { 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            padding: 25px 15px; 
+            border-radius: 15px; 
+            text-decoration: none; 
+            color: white !important; 
+            font-weight: bold; 
+            transition: 0.3s; 
+            font-size: 16px; 
+            text-align: center;
+        }
+        .btn i { font-size: 30px; } / Povećane ikone /
+        
         .btn-call { background-color: #1a1a1a; }
         .btn-whatsapp { background-color: #25D366; }
         .btn-viber { background-color: #7360f2; }
-        .btn-map { background-color: #4285F4; } / Google plava boja */
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); opacity: 0.9; }
+        .btn-map { background-color: #4285F4; }
+        
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
 
-        .map-container { margin-top: 20px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #eee; }
-        .galerija { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 20px; }
-        .galerija img { width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); display: block; }
+        h2.section-title { font-size: 24px; text-align: center; text-transform: uppercase; margin-top: 60px; padding-bottom: 10px; border-bottom: 2px solid #eee; }
+        
+        .galerija { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 20px; }
+        .galerija img { width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        
+        .map-container { margin-top: 30px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
         img[src=""], img:not([src]) { display: none !important; }
-        footer { text-align: center; padding: 60px 0; color: #999; border-top: 1px solid #eee; margin-top: 80px; font-size: 14px; }
-        @media (max-width: 600px) { h1 { font-size: 28px; } }
+        footer { text-align: center; padding: 60px 0; color: #999; font-size: 13px; }
+
+        @media (max-width: 600px) {
+            .contact-buttons { grid-template-columns: 1fr 1fr; } / Dva gumba u redu na mobitelu */
+            .btn { padding: 20px 10px; font-size: 14px; }
+            .btn i { font-size: 24px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
+    
     <div class="logo-container">
-        <img src="logo.jpg" alt="PRO FENCE Logo" onerror="this.style.display='none'">
+        <img src="logo.jpg" alt="PRO FENCE Srebrenik Logo" onerror="this.style.display='none'">
     </div>
 
     <div class="header-info">
-        <strong>PRO FENCE SREBRENIK</strong>
-        <h1>PROIZVODNJA OGRADA</h1>
-        <p class="slogan">Kvalitetno • Sigurno • Pouzdano</p>
+        <h1>PRO FENCE SREBRENIK</h1>
+        <p class="slogan">Kvalitet • Sigurnost • Povjerenje</p>
     </div>
 
     <div class="contact-buttons">
         <a href="tel:+38762912480" class="btn btn-call"><i class="fas fa-phone-alt"></i> POZIV</a>
         <a href="https://api.whatsapp.com/send?phone=38762912480" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
         <a href="viber://add?number=38762912480" class="btn btn-viber"><i class="fab fa-viber"></i> VIBER</a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=44.646738,18.528340" target="_blank" class="btn btn-map"><i class="fas fa-route"></i> LOKACIJA</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=44.6461,18.5292" target="_blank" class="btn btn-map"><i class="fas fa-route"></i> LOKACIJA</a>
     </div>
 
     <h2 class="section-title">Panelne Ograde</h2>
     <div class="galerija">
         <img src="panelne_ograde.jpg" onerror="this.style.display='none'">
         <img src="panelne_ograde1.jpg" onerror="this.style.display='none'">
-        <img src="panelne_ograde2.jpg" onerror="this.style.display='none'">
     </div>
 
     <h2 class="section-title">Automatske Kapije</h2>
@@ -72,14 +105,11 @@
         <img src="inox_ograde1.jpg" onerror="this.style.display='none'">
     </div>
 
-    <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> Naša Lokacija</h2>
-    <p>Tinja donja bb, 75357 Srebrenik</p>
+    <h2 class="section-title">Pronađite nas</h2>
     <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2847.632488812497!2d18.526151376662757!3d44.46132790013346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759a89a8580cf39%3A0x38e975c533248570!2sDoz%20Doo!5e0!3m2!1shr!2sba!4v1700000000000" 
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.4673844616235!2d18.526625076646545!3d44.6461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759aa9a8580cf39%3A0x38ef97c533248570!2zRG96IGQuby5vLg!5e0!3m2!1sbs!2sba!4v1715600000000!5m2!1sbs!2sba" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
+
 </div>
 
 <footer>
