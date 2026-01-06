@@ -4,150 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Fence | Srebrenik</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --plava: #004a99; 
-            --siva-bg: #f8f9fa;
+            --siva-bg: #f2f2f2;
+            --tekst: #333333;
         }
- { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: 'Roboto', sans-serif; background-color: white; color: #333; text-align: center; }
+ { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: 'Roboto', sans-serif; background-color: white; color: var(--tekst); text-align: center; -webkit-font-smoothing: antialiased; }
 
-        /* LOGO SEKCIJA - Bijela pozadina /
+        /* NAVIGACIJA /
         nav { 
             background: white; 
-            padding: 20px 0;
+            padding: 20px 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-bottom: 1px solid #eee;
         }
         .logo { 
             font-family: 'Oswald', sans-serif; 
-            font-size: 2.5rem; 
+            font-size: 2.8rem; 
             color: var(--plava); 
             font-style: italic;
             text-transform: uppercase;
+            line-height: 1;
         }
         .pod-logo {
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: #666;
-            margin-top: -5px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #555;
+            margin-top: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        / HERO - Tamna slika sa bijelim tekstom /
+        / HERO SEKCIJA /
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
-            padding: 60px 20px;
+            padding: 70px 20px;
             color: white;
         }
-        .hero h1 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; margin-bottom: 10px; }
-        .hero p { font-size: 1rem; opacity: 0.9; }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-size: 2.3rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero p { font-size: 1rem; letter-spacing: 2px; font-weight: 300; }
 
-        / O NAMA - Plavi naslov /
-        .o-nama { padding: 40px 20px; }
-        .o-nama span { color: var(--plava); font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
-        .o-nama h2 { color: var(--plava); font-family: 'Oswald', sans-serif; font-size: 2rem; margin: 10px 0; }
-        .o-nama p { color: #777; font-size: 0.9rem; max-width: 500px; margin: 0 auto; line-height: 1.5; }
+        / O NAMA /
+        .o-nama { padding: 50px 20px; max-width: 800px; margin: 0 auto; }
+        .oznaka { color: var(--plava); font-weight: 900; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .o-nama h2 { color: var(--plava); font-family: 'Oswald', sans-serif; font-size: 2.1rem; margin-bottom: 15px; text-transform: uppercase; }
+        .o-nama p { color: #666; font-size: 0.95rem; line-height: 1.6; }
 
-        / KONTAKT BOX - Sivi pravougaonik /
+        / KONTAKT BOX /
         .kontakt-box {
             background: var(--siva-bg);
             margin: 20px auto;
-            padding: 30px;
+            padding: 45px 20px;
             max-width: 90%;
-            border-radius: 5px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
         }
-        .kontakt-box span { font-size: 0.8rem; font-weight: bold; color: var(--plava); text-transform: uppercase; }
-        .kontakt-box .broj { font-size: 2rem; font-weight: 900; color: var(--plava); display: block; margin: 10px 0; text-decoration: none; }
-        .kontakt-box .email { font-size: 0.8rem; color: #888; }
+        .kontakt-box span { font-size: 0.8rem; font-weight: 900; color: var(--plava); letter-spacing: 1px; text-transform: uppercase; }
+        .kontakt-box .broj { font-size: 2.3rem; font-weight: 900; color: var(--plava); display: block; margin: 15px 0; text-decoration: none; font-family: 'Oswald', sans-serif; }
+        .kontakt-box .email { font-size: 0.9rem; color: #555; font-weight: 500; text-decoration: none; }
 
-        / GRID SA SLIKAMA /
+        / USLUGE GRID /
         .usluge-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             padding: 20px;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
-        .usluga { text-decoration: none; }
-        .usluga img { width: 100%; height: 150px; object-fit: cover; border-radius: 3px; }
+        .usluga { text-decoration: none; display: block; }
+        .usluga img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .usluga h3 { 
             color: var(--plava); 
             font-family: 'Oswald', sans-serif; 
-            font-size: 1rem; 
-            margin-top: 10px; 
+            font-size: 1.1rem; 
+            margin-top: 12px; 
             text-transform: uppercase; 
         }
 
-        / ALU & INOX - Široka kartica na dnu */
+        / DONJA SEKCIJA /
         .siroka-usluga {
-            padding: 0 20px 40px 20px;
-            max-width: 600px;
+            padding: 10px 20px 60px 20px;
+            max-width: 800px;
             margin: 0 auto;
         }
         .inox-box {
             position: relative;
-            height: 120px;
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            border-radius: 5px;
+            text-decoration: none;
         }
         .inox-box img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
         .inox-box h3 { 
             background: var(--plava); 
             color: white; 
-            padding: 10px 20px; 
+            padding: 12px 25px; 
             font-family: 'Oswald', sans-serif; 
             text-transform: uppercase;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
         }
 
+        footer { padding: 40px 20px; background: #f9f9f9; font-size: 0.8rem; color: #999; border-top: 1px solid #eee; }
+
+        / Mobilna prilagodba */
+        @media (max-width: 600px) {
+            .usluge-grid { grid-template-columns: 1fr; }
+            .kontakt-box .broj { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">PRO FENCE</div>
-        <div class="pod-logo">Srebrenik | +387 62 912 480</div>
+        <div class="pod-logo">SREBRENIK • +387 62 912 480</div>
     </nav>
 
     <header class="hero">
         <h1>PROIZVODNJA OGRADA</h1>
-        <p>Kvalitetno • Sigurno • Pouzdano</p>
+        <p>KVALITETNO • SIGURNO • POUZDANO</p>
     </header>
 
     <section class="o-nama">
-        <span>O NAMA</span>
-        <h2>PROIZVODNJA OGRADA</h2>
-        <p>Stručnjaci za panelne ograde, aluminijske i inox sisteme. Pružamo profesionalnu uslugu uz pažljivo montiranje.</p>
+        <span class="oznaka">O NAMA</span>
+        <h2>MODERNI OGRADNI SISTEMI</h2>
+        <p>Mi smo lideri u proizvodnji ogradnih sistema u Srebreniku. Nudimo vrhunsku izradu panelnih, aluminijskih i inox ograda, uz brzu montažu i profesionalan pristup svakom klijentu.</p>
     </section>
 
     <div class="kontakt-box">
         <span>PODACI ZA KONTAKT</span>
         <a href="tel:+38762912480" class="broj">+387 62 912 480</a>
-        <div class="email">kiko__zukic@windowslive.com</div>
+        <a href="mailto:kiko__zukic@windowslive.com" class="email">kiko__zukic@windowslive.com</a>
     </div>
 
     <div class="usluge-grid">
         <div class="usluga">
-            <img src="https://images.unsplash.com/photo-1505322104033-31120aa22880?auto=format&fit=crop&w=400&q=80">
+            <img src="https://images.unsplash.com/photo-1505322104033-31120aa22880?auto=format&fit=crop&w=500&q=80" alt="Panelne ograde">
             <h3>PANELNE OGRADE</h3>
         </div>
         <div class="usluga">
-            <img src="https://images.unsplash.com/photo-1510000213002-369f698c6913?auto=format&fit=crop&w=400&q=80">
+            <img src="https://images.unsplash.com/photo-1510000213002-369f698c6913?auto=format&fit=crop&w=500&q=80" alt="Auto kapije">
             <h3>AUTO KAPIJE</h3>
         </div>
     </div>
 
     <div class="siroka-usluga">
         <div class="inox-box">
-            <img src="https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&w=600&q=80">
-            <h3>ALU & INOX</h3>
+            <img src="https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&w=800&q=80" alt="Alu i Inox">
+            <h3>ALUMINIUM & INOX</h3>
         </div>
     </div>
+
+    <footer>
+        &copy; 2026 PRO FENCE Srebrenik. Sva prava zadržana.
+    </footer>
 
 </body>
 </html>
