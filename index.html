@@ -7,137 +7,126 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Antracit gradijent pozadina sa tvoje slike /
-        body { 
-            font-family: 'Montserrat', sans-serif; 
+        /* EKSTREMNA TAMNA POZADINA - ANTI-WHITE FORCE /
+        html, body { 
+            background: #161a1d !important; / Forsira tamnu boju /
             margin: 0; padding: 0; 
-            background: radial-gradient(circle, #3d484d 0%, #161a1d 100%); 
             color: #ffffff; 
-            display: flex;
-            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
         }
 
-        .container { width: 100%; max-width: 600px; padding: 20px; box-sizing: border-box; }
+        body {
+            background: radial-gradient(circle, #3d484d 0%, #161a1d 100%) !important;
+            min-height: 100vh;
+        }
+
+        .container { 
+            max-width: 500px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            box-sizing: border-box;
+            text-align: center;
+        }
         
-        / FIKSIRANO CENTRIRANJE LOGOTIPA /
-        .logo-container { 
-            text-align: center; 
-            padding: 30px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .logo-container img { 
-            max-width: 200px; / Smanjena veličina da ne bude prevelik /
+        / SAVRŠENO CENTRIRAN LOGO /
+        .logo-box { 
             width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            padding: 30px 0;
+        }
+        .logo-box img { 
+            width: 180px; / Mala i elegantna veličina /
             height: auto; 
-            border-radius: 10px;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+            border-radius: 12px;
+            filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
         }
 
-        .header-info { text-align: center; margin-bottom: 30px; }
-        h1 { font-size: 26px; font-weight: 700; text-transform: uppercase; margin: 0; letter-spacing: 1px; color: #f0f0f0; }
-        .slogan { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 3px; margin-top: 5px; }
+        h1 { font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 10px 0 5px 0; color: #fff; }
+        .slogan { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; }
 
-        / SIMETRIČNI DUGMIĆI - 2 u redu na mobitelu /
-        .contact-buttons { 
+        / DUGMAD U DVA REDA - SIMETRIČNO /
+        .btn-grid { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
             gap: 12px; 
-            margin: 30px 0; 
+            margin-bottom: 40px; 
         }
         .btn { 
-            display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            justify-content: center; 
-            gap: 10px; 
-            padding: 20px 10px; 
-            border-radius: 15px; 
-            text-decoration: none; 
-            color: white !important; 
-            font-weight: bold; 
-            transition: 0.3s ease; 
-            font-size: 13px; 
-            / Srebrni/Antracit efekt /
-            background: linear-gradient(145deg, #323a3e, #1e2427);
+            background: linear-gradient(145deg, #2c3439, #1a1f22);
             border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 20px 10px;
+            text-decoration: none;
+            color: white !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 12px;
+            transition: 0.3s ease;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
         }
         .btn i { font-size: 24px; }
-        
-        / Boje ikona /
-        .btn-call i { color: #ffffff; }
-        .btn-whatsapp i { color: #25D366; }
-        .btn-viber i { color: #7360f2; }
-        .btn-map i { color: #4285F4; }
-        
-        .btn:hover { 
-            transform: translateY(-3px); 
-            background: linear-gradient(145deg, #3d464b, #252c30);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
+        .btn:hover { transform: translateY(-3px); background: #323a3f; border: 1px solid rgba(255,255,255,0.2); }
 
-        h2.section-title { 
-            font-size: 18px; text-align: center; text-transform: uppercase; 
-            margin-top: 50px; padding-bottom: 10px; 
-            border-bottom: 1px solid rgba(255,255,255,0.1); 
-            color: #ccc;
-        }
+        / BOJE IKONA */
+        .fa-phone-alt { color: #fff; }
+        .fa-whatsapp { color: #25D366; }
+        .fa-viber { color: #7360f2; }
+        .fa-route { color: #4285F4; }
+
+        h2 { font-size: 16px; text-transform: uppercase; color: #aaa; margin-top: 40px; border-bottom: 1px solid #2c3439; padding-bottom: 10px; }
         
-        .galerija { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
         .galerija img { 
-            width: 100%; border-radius: 12px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4); 
+            width: 100%; 
+            border-radius: 15px; 
+            margin-top: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
-        
-        .map-container { 
-            margin-top: 25px; border-radius: 15px; overflow: hidden; 
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        footer { text-align: center; padding: 50px 0; color: #555; font-size: 11px; letter-spacing: 1px; }
 
-        / Responzivnost za jako male ekrane */
-        @media (max-width: 350px) {
-            .contact-buttons { grid-template-columns: 1fr; }
+        .map-box { 
+            margin-top: 20px; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            border: 1px solid #2c3439;
         }
+
+        footer { padding: 40px 0; color: #444; font-size: 10px; }
     </style>
 </head>
 <body>
 
 <div class="container">
     
-    <div class="logo-container">
+    <div class="logo-box">
         <img src="logo.jpg" alt="PRO FENCE" onerror="this.style.display='none'">
     </div>
 
-    <div class="header-info">
-        <h1>PRO FENCE SREBRENIK</h1>
-        <p class="slogan">Premium Ogradni Sistemi</p>
+    <h1>PRO FENCE SREBRENIK</h1>
+    <div class="slogan">Premium sistemi ogradivanja</div>
+
+    <div class="btn-grid">
+        <a href="tel:+38762912480" class="btn"><i class="fas fa-phone-alt"></i> POZIV</a>
+        <a href="https://api.whatsapp.com/send?phone=38762912480" class="btn"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+        <a href="viber://add?number=38762912480" class="btn"><i class="fab fa-viber"></i> VIBER</a>
+        <a href="https://maps.google.com/?cid=256309102029079920&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ5" target="_blank" class="btn"><i class="fas fa-route"></i> LOKACIJA</a>
     </div>
 
-    <div class="contact-buttons">
-        <a href="tel:+38762912480" class="btn btn-call"><i class="fas fa-phone-alt"></i> POZIV</a>
-        <a href="https://api.whatsapp.com/send?phone=38762912480" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
-        <a href="viber://add?number=38762912480" class="btn btn-viber"><i class="fab fa-viber"></i> VIBER</a>
-        <a href="https://www.google.com/maps/dir//Tinja+donja+bb" target="_blank" class="btn btn-map"><i class="fas fa-route"></i> LOKACIJA</a>
-    </div>
-
-    <h2 class="section-title">Naši Radovi</h2>
+    <h2>Galerija Radova</h2>
     <div class="galerija">
         <img src="panelne_ograde.jpg" onerror="this.style.display='none'">
         <img src="automatske_kapije.jpg" onerror="this.style.display='none'">
     </div>
 
-    <h2 class="section-title">Lokacija</h2>
-    <div class="map-container">
-        <iframe src="https://maps.google.com/?cid=256309102029079920&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ3" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <h2>Gdje se nalazimo</h2>
+    <div class="map-box">
+        <iframe src="https://maps.google.com/?cid=256309102029079920&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ6" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
-    <footer>
-        © 2026 PRO FENCE Srebrenik
-    </footer>
+    <footer>© 2026 PRO FENCE SREBRENIK</footer>
 
 </div>
 
