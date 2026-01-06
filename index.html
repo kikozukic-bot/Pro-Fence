@@ -7,24 +7,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* CIJELA POZADINA U ANTRACITU /
+        /* TOTALNI ANTRACIT /
         html, body { 
             background-color: #1a1f22 !important; 
-            margin: 0; 
-            padding: 0; 
+            margin: 0; padding: 0; 
             color: #ffffff; 
             font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
         }
 
         .container { 
-            max-width: 500px; 
+            max-width: 450px; 
             margin: 0 auto; 
             padding: 10px 20px; 
             box-sizing: border-box; 
         }
         
-        / SMANJENA I CENTRIRANA NASLOVNA FOTOGRAFIJA /
+        / FIKSIRANA MALA NASLOVNA SLIKA /
         .logo-box { 
             width: 100%; 
             display: flex; 
@@ -32,69 +31,59 @@
             padding: 20px 0; 
         }
         .logo-box img { 
-            width: 150px; / Prvobitna mala veličina /
-            height: auto; 
-            border-radius: 10px;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+            width: 100px !important; / Striktno mala veličina /
+            height: 100px !important; / Prisiljava kvadratni oblik ako treba /
+            object-fit: contain;
+            border-radius: 50%; / Ovo je čini elegantnom i okruglom ako je logo takav /
+            background: #2c3439;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
         .header-text { text-align: center; margin-bottom: 25px; }
-        h1 { font-size: 22px; font-weight: 700; text-transform: uppercase; margin: 0; color: #fff; }
-        .slogan { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 2px; }
+        h1 { font-size: 20px; font-weight: 700; text-transform: uppercase; margin: 0; color: #fff; letter-spacing: 1px; }
+        .slogan { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 2px; }
 
-        / DUGMAD - SIMETRIČNA 2x2 /
+        / DUGMAD 2x2 /
         .btn-grid { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 10px; 
+            gap: 12px; 
             margin-bottom: 30px; 
         }
         .btn { 
             background: linear-gradient(145deg, #2c3439, #1a1f22);
             border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 15px 5px;
+            border-radius: 15px;
+            padding: 18px 5px;
             text-decoration: none;
             color: white !important;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             font-weight: 700;
             font-size: 11px;
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
         }
-        .btn i { font-size: 20px; }
+        .btn i { font-size: 22px; }
         
-        / BOJE IKONA */
-        .fa-phone-alt { color: #ffffff; }
+        / BOJE */
         .fa-whatsapp { color: #25D366; }
         .fa-viber { color: #7360f2; }
         .fa-route { color: #4285F4; }
 
         h2 { font-size: 14px; text-transform: uppercase; color: #aaa; margin-top: 30px; text-align: center; border-bottom: 1px solid #2c3439; padding-bottom: 8px; }
         
-        .galerija img { 
-            width: 100%; 
-            border-radius: 10px; 
-            margin-top: 10px;
-            border: 1px solid #2c3439;
-        }
+        .galerija img { width: 100%; border-radius: 12px; margin-top: 15px; }
 
-        .map-box { 
-            margin-top: 15px; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            border: 1px solid #2c3439;
-        }
+        .map-box { margin-top: 15px; border-radius: 15px; overflow: hidden; }
 
-        footer { text-align: center; padding: 30px 0; color: #444; font-size: 10px; }
+        footer { text-align: center; padding: 40px 0; color: #444; font-size: 9px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    
     <div class="logo-box">
         <img src="logo.jpg" alt="PRO FENCE" onerror="this.style.display='none'">
     </div>
@@ -108,7 +97,7 @@
         <a href="tel:+38762912480" class="btn"><i class="fas fa-phone-alt"></i> POZIV</a>
         <a href="https://wa.me/38762912480" class="btn"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
         <a href="viber://add?number=38762912480" class="btn"><i class="fab fa-viber"></i> VIBER</a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=44.6465,18.5292" target="_blank" class="btn"><i class="fas fa-route"></i> LOKACIJA</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=44.6644,18.5284" target="_blank" class="btn"><i class="fas fa-route"></i> LOKACIJA</a>
     </div>
 
     <h2>Galerija Radova</h2>
@@ -119,11 +108,10 @@
 
     <h2>Mapa</h2>
     <div class="map-box">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.866579203645!2d18.526625!3d44.646500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDM4JzQ3LjQiTiAxOMKwMzEnMzUuOSJF!5e0!3m2!1sbs!2sba!4v1700000000000!5m2!1sbs!2sba" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2847.652156828859!2d18.5283!3d44.6644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDM5JzUxLjgiTiAxOMKwMzEnNDEuOSJF!5e0!3m2!1sbs!2sba!4v1700000000000!5m2!1sbs!2sba" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
     <footer>© 2026 PRO FENCE SREBRENIK</footer>
-
 </div>
 
 </body>
