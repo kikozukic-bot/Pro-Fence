@@ -22,11 +22,30 @@
         .category-title { margin-top: 50px; font-size: 2rem; color: #3498db; text-transform: uppercase; border-bottom: 2px solid #34495e; display: inline-block; padding-bottom: 5px; }
         .gallery-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px; max-width: 1300px; margin: 0 auto; }
 
-        .card { background: #1a252f; width: 300px; border-radius: 10px; overflow: hidden; border: 1px solid #3498db; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
+        .card { background: #1a252f; width: 300px; border-radius: 10px; overflow: hidden; border: 1px solid #3498db; transition: 0.3s; cursor: pointer; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); }
         .img-box { height: 220px; background: #34495e; display: flex; align-items: center; justify-content: center; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
         
+        /* LIGHTBOX STIL (Za uvećanje slike) */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 3px solid #3498db;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
         /* KONTAKT BAR */
         .contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: #1a252f; padding: 15px 5px; border-top: 3px solid #3498db; z-index: 1000; }
         .red-dugmadi { display: flex; justify-content: center; gap: 10px; margin-bottom: 10px; }
@@ -39,6 +58,10 @@
 </head>
 <body>
 
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+    </div>
+
     <div class="header">
         <img src="logo.png" alt="Pro Fence Logo" class="logo-img">
         <h1>Pro Fence Srebrenik</h1>
@@ -47,36 +70,36 @@
 
     <h2 class="category-title">Inox Ograde</h2>
     <div class="gallery-container">
-        <div class="card"><div class="img-box"><img src="inox1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+1'"></div></div>
-        <div class="card"><div class="img-box"><img src="inox2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+2'"></div></div>
-        <div class="card"><div class="img-box"><img src="inox3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+3'"></div></div>
+        <div class="card" onclick="openLightbox('inox1.jpg')"><div class="img-box"><img src="inox1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+1'"></div></div>
+        <div class="card" onclick="openLightbox('inox2.jpg')"><div class="img-box"><img src="inox2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+2'"></div></div>
+        <div class="card" onclick="openLightbox('inox3.jpg')"><div class="img-box"><img src="inox3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+3'"></div></div>
     </div>
 
     <h2 class="category-title">Panelne Ograde</h2>
     <div class="gallery-container">
-        <div class="card"><div class="img-box"><img src="panel1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+1'"></div></div>
-        <div class="card"><div class="img-box"><img src="panel2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+2'"></div></div>
-        <div class="card"><div class="img-box"><img src="panel3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+3'"></div></div>
+        <div class="card" onclick="openLightbox('panel1.jpg')"><div class="img-box"><img src="panel1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+1'"></div></div>
+        <div class="card" onclick="openLightbox('panel2.jpg')"><div class="img-box"><img src="panel2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+2'"></div></div>
+        <div class="card" onclick="openLightbox('panel3.jpg')"><div class="img-box"><img src="panel3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+3'"></div></div>
     </div>
 
     <h2 class="category-title">Alu Ograde</h2>
     <div class="gallery-container">
-        <div class="card"><div class="img-box"><img src="alu1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+1'"></div></div>
-        <div class="card"><div class="img-box"><img src="alu2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+2'"></div></div>
-        <div class="card"><div class="img-box"><img src="alu3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+3'"></div></div>
+        <div class="card" onclick="openLightbox('alu1.jpg')"><div class="img-box"><img src="alu1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+1'"></div></div>
+        <div class="card" onclick="openLightbox('alu2.jpg')"><div class="img-box"><img src="alu2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+2'"></div></div>
+        <div class="card" onclick="openLightbox('alu3.jpg')"><div class="img-box"><img src="alu3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+3'"></div></div>
     </div>
 
     <h2 class="category-title">Staklene Ograde</h2>
     <div class="gallery-container">
-        <div class="card"><div class="img-box"><img src="staklo1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+1'"></div></div>
-        <div class="card"><div class="img-box"><img src="staklo2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+2'"></div></div>
-        <div class="card"><div class="img-box"><img src="staklo3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+3'"></div></div>
+        <div class="card" onclick="openLightbox('staklo1.jpg')"><div class="img-box"><img src="staklo1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+1'"></div></div>
+        <div class="card" onclick="openLightbox('staklo2.jpg')"><div class="img-box"><img src="staklo2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+2'"></div></div>
+        <div class="card" onclick="openLightbox('staklo3.jpg')"><div class="img-box"><img src="staklo3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+3'"></div></div>
     </div>
 
     <div style="padding: 40px 20px;">
         <h2>Gdje se nalazimo?</h2>
         <div class="mapa-okvir">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2843.468249826079!2d18.475470076643236!3d44.54652239401768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759508df9c8289d%3A0xc3f5886616469608!2sTinja%20Donja!5e0!3m2!1sbs!2sba!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11417.848529267121!2d18.4900!3d44.6900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47594967396a603d%3A0xc348508f75b6d510!2sTinja%20Donja!5e0!3m2!1shr!2sba!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 
@@ -92,6 +115,19 @@
     </div>
 
     <footer>© 2026 PRO FENCE SREBRENIK</footer>
+
+    <script>
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
