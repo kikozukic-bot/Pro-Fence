@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro Fence Srebrenik | 2026</title>
+    <title>Pro Fence Srebrenik | Kvalitetne Ograde 2026</title>
     
-    <!-- SEO Meta Tagovi -->
     <meta name="description" content="Pro Fence Srebrenik - Inox ograde, panelne ograde, automatske kapije i alu ograde u Tinji Donjoj.">
     <meta name="keywords" content="ograde, kapije, inox, alu, panelne ograde, Srebrenik, Pro Fence">
     <meta name="author" content="Pro Fence Srebrenik">
 
-    <!-- Fontovi i ikone -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             font-family: 'Poppins', sans-serif;
             background-color: #2c3e50; 
             color: #ffffff;
@@ -30,132 +25,152 @@
 
         /* GORNJA NAVIGACIJA /
         .top-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background: #1a252f;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            align-items: center;
-            z-index: 100000;
-            border-bottom: 2px solid #3498db;
+            position: fixed; top: 0; left: 0; width: 100%; height: 65px;
+            background: #1a252f; display: flex; justify-content: center;
+            gap: 25px; align-items: center; z-index: 100000;
+            border-bottom: 3px solid #3498db;
         }
         .top-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: white; text-decoration: none; font-weight: bold;
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
+            transition: 0.3s;
         }
-        .top-nav a:hover {
-            color: #3498db;
-        }
+        .top-nav a:hover { color: #3498db; }
 
-        .header { text-align: center; padding: 40px 20px; }
-        .logo-box { font-size: 50px; color: #3498db; margin-bottom: 10px; }
-
-        / NASLOVNA SLIKA /
-        .naslovna-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px auto;
+        / HEADER SEKCIJA SA LOGOOM /
+        .header { text-align: center; padding: 50px 20px 30px; }
+        
+        .logo-container {
+            margin-bottom: 20px;
         }
-        .naslovna-slika {
-            max-width: 90%;
+        .logo-img {
+            width: 260px; / Veličina logotipa /
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            border: 1px solid rgba(52, 152, 219, 0.2);
         }
 
-        / GALERIJA /
+        .header h1 { margin: 10px 0 5px; font-size: 2.2rem; }
+        .tagline { color: #3498db; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+
+        / ZAŠTO MI SEKCIJA /
+        .trust-section {
+            background: #1a252f; padding: 40px 20px; text-align: center;
+            margin-bottom: 30px;
+        }
+        .trust-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; max-width: 1000px; margin: 20px auto 0;
+        }
+        .trust-item i { font-size: 30px; color: #3498db; margin-bottom: 10px; }
+        .trust-item h3 { font-size: 1rem; margin: 5px 0; }
+        .trust-item p { font-size: 0.85rem; color: #bdc3c7; }
+
+        / GALERIJA USLUGA /
+        .section-title { text-align: center; margin-bottom: 30px; font-size: 1.8rem; }
+        .section-title span { color: #3498db; }
+        
         .gallery {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; padding: 20px;
         }
         .item {
-            background: #34495e;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #455a64;
-            text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            background: #1a252f; border-radius: 12px; overflow: hidden;
+            border: 1px solid #34495e; transition: 0.3s;
         }
-        .item:hover {
-            transform: scale(1.05);
-            border-color: #3498db;
-        }
-        .item img { width: 100%; height: 230px; object-fit: cover; display: block; }
-        .item h3 { padding: 15px; margin: 0; font-size: 1rem; }
+        .item:hover { transform: translateY(-5px); border-color: #3498db; }
+        .item img { width: 100%; height: 220px; object-fit: cover; border-bottom: 3px solid #3498db; }
+        .item-text { padding: 20px; }
+        .item-text h3 { margin: 0 0 10px; color: #3498db; font-size: 1.2rem; }
+        .item-text p { margin: 0; font-size: 0.9rem; color: #bdc3c7; }
 
-        / SEKCIJA ZA MAPU /
-        .map-section {
-            padding: 20px;
-            background: #1a252f;
-            text-align: center;
-        }
+        / MAPA /
+        .map-section { padding: 40px 20px; background: #1a252f; text-align: center; }
         .map-container {
-            width: 100%;
-            max-width: 1000px;
-            height: 400px;
-            margin: 20px auto;
-            border-radius: 10px;
-            overflow: hidden;
+            width: 100%; max-width: 900px; height: 350px;
+            margin: 25px auto; border-radius: 12px; overflow: hidden;
             border: 2px solid #3498db;
         }
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            filter: invert(90%) hue-rotate(180deg);
-        }
+        .map-container iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg); }
 
-        / DONJI PLUTAJUĆI GUMBI /
+        / KONTAKT BAR */
         .contact-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #1a252f;
-            padding: 15px 0;
-            z-index: 100001;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: #1a252f; padding: 15px 0; z-index: 100001;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.8); border-top: 2px solid #3498db;
         }
-        .phone-row {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
+        .phone-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 8px; }
         .btn-call {
-            width: 45%;
-            max-width: 170px;
-            padding: 12px 5px;
-            border-radius: 5px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
+            width: 45%; max-width: 160px; padding: 12px 5px; border-radius: 8px;
+            color: white; text-decoration: none; font-weight: bold;
+            font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 8px;
         }
         .viber { background-color: #7360f2; }
         .whatsapp { background-color: #25D366; }
-        .btn-call:hover { opacity: 0.85; }
 
-        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.8rem; margin-bottom: 100px;}
+        footer { text-align: center; padding: 30px; color: #7f8c8d; font-size: 0.8rem; margin-bottom: 120px; }
 
-        / RESPONSIVE */
         @media (max-width: 600px) {
-            .btn-call {
-                width: 90%;
+            .btn-call { width: 46%; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="#">Početna</a>
+        <a href="#usluge">Usluge</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Pro Fence Srebrenik Logo" class="logo-img">
+        </div>
+        <h1>Pro Fence Srebrenik</h1>
+        <p class="tagline">Sigurnost • Kvalitet • Dizajn</p>
+    </header>
+
+    <section class="trust-section">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Kvalitet</h3>
+                <p>Certificirani materijali</p>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-clock"></i>
+                <h3>Garancija</h3>
+                <p>Dugovječnost i sjaj</p>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Lokalna Firma</h3>
+                <p>Srebrenik i okolina</p>
+            </div>
+        </div>
+    </section>
+
+    <h2 id="usluge" class="section-title">Naše <span>Usluge</span></h2>
+    <div class="gallery">
+        <div class="item">
+            <img src="inox_ograde1.jpg" alt="Inox Ograde">
+            <div class="item-text">
+                <h3>Inox Ograde</h3>
+                <p>Vrhunski dizajn i otpornost bez potrebe za održavanjem.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="panelne_ograde1.jpg" alt="Panelne Ograde">
+            <div class="item-text">
+                <h3>Panelne Ograde</h3>
+                <p>Ekonomično i brzo rješenje za vaš posjed.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="automatske_kapije1.jpg" alt="Automatske Kapije">
+            <div class="item-text">
+                <h3>Automatske Kapije</h3>
+                <p>Sistemi na
