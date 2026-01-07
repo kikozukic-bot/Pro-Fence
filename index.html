@@ -9,80 +9,42 @@
         * { box-sizing: border-box; }
         body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #2c3e50; color: white; text-align: center; }
         
-        /* HEADER - POSEBNO PRILAGOĐEN LOGO */
-        .header { padding: 80px 20px; background: #1a252f; border-bottom: 4px solid #3498db; }
+        /* HEADER */
+        .header { padding: 60px 20px; background: #1a252f; border-bottom: 4px solid #3498db; }
         
+        /* LOGO STIL - Prilagodljiv */
         .logo-img { 
-            /* Osnovna veličina za mobitele */
-            width: 90%; 
-            max-width: 350px; 
+            width: 100%; /* Na mobitelu ide do max širine ispod */
+            max-width: 320px; 
             height: auto; 
             border-radius: 20px; 
             box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
         }
         
-        /* DESKTOP PRILAGOĐAVANJE - 3 PUTA VEĆI LOGO */
+        /* DESKTOP SILA - Forsirano 3 puta veće (960px) */
         @media (min-width: 1024px) {
             .logo-img { 
-                width: 900px; /* Ekstremno veliki logo za desktop */
-                max-width: 80vw; 
+                max-width: 960px !important; /* Forsiramo veličinu */
+                width: 960px !important;
             }
-            .header h1 { font-size: 3.5rem; } /* Povećan i tekst uz veliki logo */
+            .header h1 { font-size: 3.5rem; }
         }
         
-        /* KONTEJNER ZA USLUGE */
-        .usluge-container { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 20px; 
-            padding: 40px 10px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-
-        /* KARTICA */
-        .kartica { 
-            background: #1a252f; 
-            width: 280px; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            border: 1px solid #3498db;
-            transition: 0.3s;
-        }
+        .usluge-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 10px; max-width: 1200px; margin: 0 auto; }
+        .kartica { background: #1a252f; width: 280px; border-radius: 12px; overflow: hidden; border: 1px solid #3498db; transition: 0.3s; }
         .kartica:hover { transform: translateY(-10px); }
-        .slika-okvir { 
-            height: 200px; 
-            background: #34495e; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-weight: bold;
-            border-bottom: 3px solid #3498db;
-        }
+        .slika-okvir { height: 200px; background: #34495e; display: flex; align-items: center; justify-content: center; font-weight: bold; border-bottom: 3px solid #3498db; }
         .slika-okvir img { width: 100%; height: 100%; object-fit: cover; }
         .kartica h3 { padding: 15px; margin: 0; font-size: 1.1rem; }
 
-        /* MAPA */
         .mapa-sekcija { padding: 40px 20px; background: #1a252f; }
-        .mapa-okvir { max-width: 900px; margin: 20px auto; height: 450px; border-radius: 15px; overflow: hidden; border: 2px solid #3498db; }
+        .mapa-okvir { max-width: 1000px; margin: 20px auto; height: 450px; border-radius: 15px; overflow: hidden; border: 2px solid #3498db; }
 
-        /* FIKSNI KONTAKT BAR (Dno) */
-        .kontakt-bar { 
-            position: fixed; bottom: 0; left: 0; width: 100%; 
-            background: #1a252f; padding: 15px 5px; 
-            border-top: 3px solid #3498db; z-index: 1000;
-        }
+        .kontakt-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: #1a252f; padding: 15px 5px; border-top: 3px solid #3498db; z-index: 1000; }
         .red-dugmadi { display: flex; justify-content: center; gap: 10px; margin-bottom: 10px; }
-        .dugme { 
-            flex: 1; max-width: 180px; padding: 12px 5px; 
-            border-radius: 8px; color: white; text-decoration: none; 
-            font-weight: bold; font-size: 13px; display: flex; 
-            align-items: center; justify-content: center; gap: 5px; 
-        }
+        .dugme { flex: 1; max-width: 180px; padding: 12px 5px; border-radius: 8px; color: white; text-decoration: none; font-weight: bold; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 5px; }
         .viber { background: #7360f2; }
         .whatsapp { background: #25D366; }
-
         footer { padding: 20px 20px 150px; color: #7f8c8d; font-size: 12px; }
     </style>
 </head>
@@ -118,14 +80,12 @@
         <h2>Gdje se nalazimo?</h2>
         <p style="font-size: 1.2rem;"><i class="fas fa-map-marker-alt" style="color:#3498db;"></i> Tinja Donja, Srebrenik</p>
         <div class="mapa-okvir">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.757833535269!2d18.528333!3d44.678889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759604105470d97%3A0xc39908404a3e20e8!2sTinja%20Donja!5e0!3m2!1sbs!2sba!4v1700000000000" 
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11394.341484252512!2d18.4727181!3d44.4411111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759496738944521%3A0xc3f58a36c61f224!2sTinja%20Donja!5e0!3m2!1sbs!2sba!4v1710000000000!5m2!1sbs!2sba" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 
-    <div class="kontakt-bar">
+    <div class="contact-bar" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #1a252f; padding: 15px 5px; border-top: 3px solid #3498db; z-index: 1000;">
         <div class="red-dugmadi">
             <a href="viber://chat?number=38762912480" class="dugme viber"><i class="fab fa-viber"></i> Viber 062</a>
             <a href="https://wa.me/38762912480" class="dugme whatsapp"><i class="fab fa-whatsapp"></i> WA 062</a>
