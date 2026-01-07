@@ -28,7 +28,7 @@
             padding-bottom: 160px;
         }
 
-        / GORNJA NAVIGACIJA /
+        /* GORNJA NAVIGACIJA /
         .top-nav {
             position: fixed;
             top: 0;
@@ -57,6 +57,20 @@
 
         .header { text-align: center; padding: 40px 20px; }
         .logo-box { font-size: 50px; color: #3498db; margin-bottom: 10px; }
+
+        / NASLOVNA SLIKA /
+        .naslovna-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+        .naslovna-slika {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
         / GALERIJA /
         .gallery {
@@ -141,66 +155,7 @@
 
         footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.8rem; margin-bottom: 100px;}
 
-        / RESPONSIVE /
+        / RESPONSIVE */
         @media (max-width: 600px) {
             .btn-call {
                 width: 90%;
-                max-width: none;
-                font-size: 1rem;
-            }
-            .phone-row {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <nav class="top-nav" aria-label="Glavna navigacija">
-        <a href="#"><i class="fas fa-home"></i> Početna</a>
-        <a href="#proizvodi">Proizvodi</a>
-        <a href="#lokacija">Lokacija</a>
-    </nav>
-
-    <div class="header">
-        <div class="logo-box"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
-        <h1>Pro Fence Srebrenik</h1>
-        <p>Tinja Donja, Srebrenik • 2026</p>
-    </div>
-
-    <div id="proizvodi" class="gallery">
-        <div class="item">
-            <img src="inox_ograde1.jpg" alt="Inox ograda modernog dizajna">
-            <h3>Inox Ograde</h3>
-        </div>
-        <div class="item">
-            <img src="panelne_ograde1.jpg" alt="Panelna ograda za dvorište">
-            <h3>Panelne Ograde</h3>
-        </div>
-        <div class="item">
-            <img src="automatske_kapije1.jpg" alt="Automatska kapija sa daljinskim upravljanjem">
-            <h3>Automatske Kapije</h3>
-        </div>
-        <div class="item">
-            <img src="aluminijumske_ograde1.jpg" alt="Aluminijumska ograda elegantnog izgleda">
-            <h3>Alu Ograde</h3>
-        </div>
-    </div>
-
-    <div id="lokacija" class="map-section">
-        <h3><i class="fas fa-map-marker-alt"></i> Pronađite nas u Tinji Donjoj</h3>
-        <p>Email: <a href="mailto:kikozukic@windowslive.com" style="color:#3498db; text-decoration:none;">kikozukic@windowslive.com</a></p>
-        
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11417.80665215712!2d18.47271871783452!3d44.66956636750058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759273c524317b3%3A0x6b57976137666f22!2sDonja%20Tinja!5e0!3m2!1shr!2sba!4v1704675000000!5m2!1shr!2sba" allowfullscreen="" loading="lazy" aria-label="Mapa lokacije Pro Fence Srebrenik"></iframe>
-        </div>
-    </div>
-
-    <footer>
-        © 2026 PRO FENCE SREBRENIK - Sva prava zadržana.
-    </footer>
-
-    <div class="contact-bar">
-        <div class="phone-row">
-            <a href="viber://chat?number=38762912480" class="
