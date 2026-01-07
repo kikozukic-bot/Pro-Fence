@@ -12,168 +12,172 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #2c3e50; /* Tamna Antracit Pozadina /
+            background-color: #2c3e50; 
             color: #ffffff;
-            padding-bottom: 150px;
+            padding-top: 70px;
+            padding-bottom: 160px;
         }
 
-        / HEADER I LOGO /
-        .header {
-            text-align: center;
-            padding: 60px 20px;
+        /* GORNJA NAVIGACIJA /
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #1a252f;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+            z-index: 100000;
+            border-bottom: 2px solid #3498db;
         }
-        .logo-box {
-            margin-bottom: 20px;
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .logo-box i { font-size: 50px; color: #3498db; } / Privremena ikona ako nema logo.png /
-        .logo-img { width: 200px; height: auto; }
 
-        h1 { text-transform: uppercase; letter-spacing: 3px; margin: 0; font-size: 2rem; }
-        .subtitle { color: #bdc3c7; font-weight: 300; }
+        .header { text-align: center; padding: 40px 20px; }
+        .logo-box { font-size: 50px; color: #3498db; margin-bottom: 10px; }
 
-        / GALERIJA - 4 KOLONE /
+        / GALERIJA /
         .gallery {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            gap: 20px;
             padding: 20px;
         }
         .item {
-            background: #34495e; / Nešto svjetlija antracit za kartice /
-            border-radius: 12px;
+            background: #34495e;
+            border-radius: 10px;
             overflow: hidden;
             border: 1px solid #455a64;
-            transition: 0.3s;
             text-align: center;
         }
-        .item:hover { transform: translateY(-10px); border-color: #3498db; }
-        .item img { width: 100%; height: 250px; object-fit: cover; }
-        .item h3 { padding: 15px; margin: 0; font-size: 1.1rem; }
+        .item img { width: 100%; height: 230px; object-fit: cover; display: block; }
+        .item h3 { padding: 15px; margin: 0; font-size: 1rem; }
 
-        / MAIL SEKCIJA /
-        .contact-mail {
-            text-align: center;
-            padding: 50px 20px;
+        / SEKCIJA ZA MAPU /
+        .map-section {
+            padding: 20px;
             background: #1a252f;
-            margin-top: 40px;
+            text-align: center;
         }
-        .mail-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #3498db;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: bold;
-            transition: 0.3s;
+        .map-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 400px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #3498db;
         }
-        .mail-btn:hover { color: #ffffff; }
+        / Filter za tamnu mapu /
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: invert(90%) hue-rotate(180deg);
+        }
 
-        / PLUTAJUĆA KONTAKT TRAKA (Viber & WA) /
-        .floating-bar {
+        / DONJI PLUTAJUĆI GUMBI */
+        .contact-bar {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(26, 37, 47, 0.98);
+            background: #1a252f;
+            padding: 15px 0;
+            z-index: 100001;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
+        }
+        .phone-row {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            padding: 20px 10px;
-            z-index: 99999;
-            box-shadow: 0 -10px 25px rgba(0,0,0,0.5);
-            border-top: 3px solid #3498db;
+            margin-bottom: 10px;
         }
-
-        .phone-container {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
         .btn-call {
-            padding: 12px 18px;
-            border-radius: 8px;
+            width: 45%;
+            max-width: 170px;
+            padding: 12px 5px;
+            border-radius: 5px;
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: 0.3s;
+            justify-content: center;
+            gap: 5px;
         }
-
         .viber { background-color: #7360f2; }
         .whatsapp { background-color: #25D366; }
-        .btn-call:hover { opacity: 0.8; transform: scale(1.05); }
 
-        / MAPA */
-        .map-frame { width: 100%; height: 350px; border: none; filter: invert(90%) hue-rotate(180deg) contrast(90%); }
-
-        footer { text-align: center; padding: 30px; background: #1a252f; color: #7f8c8d; font-size: 0.9rem; }
+        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.8rem; margin-bottom: 100px;}
     </style>
 </head>
 <body>
 
+    <nav class="top-nav">
+        <a href="#"><i class="fas fa-home"></i> Početna</a>
+        <a href="#proizvodi">Proizvodi</a>
+        <a href="#lokacija">Lokacija</a>
+    </nav>
+
     <div class="header">
-        <div class="logo-box">
-            <i class="fas fa-shield-halved"></i> </div>
+        <div class="logo-box"><i class="fas fa-shield-alt"></i></div>
         <h1>Pro Fence Srebrenik</h1>
-        <p class="subtitle">Vrhunski sistemi ograda i kapija • Srebrenik</p>
+        <p>Tinja Donja, Srebrenik • 2026</p>
     </div>
 
-    <div class="gallery">
+    <div id="proizvodi" class="gallery">
         <div class="item">
             <img src="inox_ograde1.jpg" alt="Inox ograde">
-            <h3><i class="fas fa-check-circle"></i> Inox Ograde</h3>
+            <h3>Inox Ograde</h3>
         </div>
         <div class="item">
             <img src="panelne_ograde1.jpg" alt="Panelne ograde">
-            <h3><i class="fas fa-grip-lines"></i> Panelne Ograde</h3>
+            <h3>Panelne Ograde</h3>
         </div>
         <div class="item">
             <img src="automatske_kapije1.jpg" alt="Automatske kapije">
-            <h3><i class="fas fa-door-open"></i> Automatske Kapije</h3>
+            <h3>Automatske Kapije</h3>
         </div>
         <div class="item">
             <img src="aluminijumske_ograde1.jpg" alt="Alu ograde">
-            <h3><i class="fas fa-layer-group"></i> Alu Ograde</h3>
+            <h3>Alu Ograde</h3>
         </div>
     </div>
 
-    <div class="contact-mail">
-        <a href="mailto:kiko__zukic@windowslive.com" class="mail-btn">
-            <i class="fas fa-envelope"></i> kiko__zukic@windowslive.com
-        </a>
+    <div id="lokacija" class="map-section">
+        <h3><i class="fas fa-map-marker-alt"></i> Pronađite nas u Tinji Donjoj</h3>
+        <p>Email: <a href="mailto:kiko__zukic@windowslive.com" style="color:#3498db; text-decoration:none;">kiko__zukic@windowslive.com</a></p>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11417.80665215712!2d18.47271871783452!3d44.66956636750058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759273c524317b3%3A0x6b57976137666f22!2sDonja%20Tinja!5e0!3m2!1shr!2sba!4v1704675000000!5m2!1shr!2sba" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </div>
-
-    <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m1!1s0x475ea2432d561a3d:0x877c8e96191c01b1!2sSrebrenik!5e0!3m2!1sbs!2sba!4v1700000000000"></iframe>
 
     <footer>
-        &copy; 2026 <strong>PRO FENCE SREBRENIK</strong> - Sva prava zadržana.
+        © 2026 PRO FENCE SREBRENIK - Sva prava zadržana.
     </footer>
 
-    <div class="floating-bar">
-        <div class="phone-container">
-            <a href="viber://chat?number=38762912480" class="btn-call viber">
-                <i class="fab fa-viber"></i> Viber (062)
-            </a>
-            <a href="https://wa.me/38762912480" class="btn-call whatsapp">
-                <i class="fab fa-whatsapp"></i> WA (062)
-            </a>
+    <div class="contact-bar">
+        <div class="phone-row">
+            <a href="viber://chat?number=38762912480" class="btn-call viber"><i class="fab fa-viber"></i> Viber (062)</a>
+            <a href="https://wa.me/38762912480" class="btn-call whatsapp"><i class="fab fa-whatsapp"></i> WA (062)</a>
         </div>
-        
-        <div class="phone-container">
-            <a href="viber://chat?number=38761814964" class="btn-call viber">
-                <i class="fab fa-viber"></i> Viber (061)
-            </a>
-            <a href="https://wa.me/38761814964" class="btn-call whatsapp">
-                <i class="fab fa-whatsapp"></i> WA (061)
-            </a>
+        <div class="phone-row">
+            <a href="viber://chat?number=38761814964" class="btn-call viber"><i class="fab fa-viber"></i> Viber (061)</a>
+            <a href="https://wa.me/38761814964" class="btn-call whatsapp"><i class="fab fa-whatsapp"></i> WA (061)</a>
         </div>
     </div>
 
