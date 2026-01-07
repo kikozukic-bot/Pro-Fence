@@ -7,32 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
-        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #2c3e50; color: white; text-align: center; }
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #2c3e50; color: white; line-height: 1.6; }
         
-        /* LOGO SEKCIJA */
-        .header { padding: 60px 20px; background: #1a252f; border-bottom: 4px solid #3498db; }
-        .logo-img { width: 100%; max-width: 320px; height: auto; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
-
-        @media (min-w…
-[18:38, 1/7/2026] kiko: <!DOCTYPE html>
-<html lang="bs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro Fence Srebrenik</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * { box-sizing: border-box; }
-        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #2c3e50; color: white; text-align: center; }
-        
-        /* LOGO SEKCIJA */
-        .header { padding: 60px 20px; background: #1a252f; border-bottom: 4px solid #3498db; }
+        /* HEADER - Popravljen logo */
+        .header { padding: 60px 10px; background: #1a252f; border-bottom: 4px solid #3498db; text-align: center; }
         .logo-img { 
-            width: 100%; 
+            width: 90%; 
             max-width: 320px; 
             height: auto; 
-            border-radius: 20px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
         }
 
         /* Desktop: Logo 3 puta veći */
@@ -41,45 +25,64 @@
             .header h1 { font-size: 3.5rem; }
         }
 
-        /* GRUPE USLUGA */
-        .category-title { margin-top: 50px; font-size: 2rem; color: #3498db; text-transform: uppercase; border-bottom: 2px solid #34495e; display: inline-block; padding-bottom: 5px; }
-        .gallery-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px; max-width: 1300px; margin: 0 auto; }
+        /* SEKCIJE I GALERIJA */
+        .sekcija { padding: 40px 10px; text-align: center; }
+        .category-title { font-size: 2rem; color: #3498db; text-transform: uppercase; margin-bottom: 20px; }
+        
+        .gallery-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
 
-        .card { background: #1a252f; width: 300px; border-radius: 10px; overflow: hidden; border: 1px solid #3498db; transition: 0.3s; cursor: pointer; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); }
-        .img-box { height: 220px; background: #34495e; display: flex; align-items: center; justify-content: center; }
+        .card { 
+            background: #1a252f; 
+            width: 300px; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            border: 1px solid #3498db; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .img-box { height: 220px; background: #34495e; overflow: hidden; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* LIGHTBOX (Uvećanje slike) */
+        /* LIGHTBOX */
         #lightbox {
             display: none;
             position: fixed;
-            z-index: 2000;
+            z-index: 9999;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-out;
+            justify-content: center; align-items: center;
         }
-        #lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            border: 3px solid #3498db;
-            border-radius: 10px;
-        }
+        #lightbox img { max-width: 90%; max-height: 80%; border: 2px solid #3498db; }
 
         /* MAPA */
-        .mapa-okvir { max-width: 1000px; margin: 30px auto; height: 400px; border-radius: 15px; overflow: hidden; border: 2px solid #3498db; }
+        .mapa-okvir { max-width: 900px; margin: 20px auto; height: 350px; border-radius: 15px; overflow: hidden; border: 2px solid #3498db; }
 
-        /* KONTAKT BAR (DNO) */
-        .contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: #1a252f; padding: 15px 5px; border-top: 3px solid #3498db; z-index: 1000; }
-        .red-dugmadi { display: flex; justify-content: center; gap: 10px; margin-bottom: 10px; }
-        .dugme { flex: 1; max-width: 180px; padding: 12px 5px; border-radius: 8px; color: white; text-decoration: none; font-weight: bold; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        /* KONTAKT BAR (Dno) */
+        .contact-bar { 
+            position: fixed; bottom: 0; left: 0; width: 100%; 
+            background: #1a252f; padding: 15px 5px; 
+            border-top: 3px solid #3498db; z-index: 8888; 
+        }
+        .red-dugmadi { display: flex; justify-content: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+        .dugme { 
+            padding: 12px 15px; border-radius: 8px; color: white; 
+            text-decoration: none; font-weight: bold; font-size: 13px; 
+            display: flex; align-items: center; gap: 5px; min-width: 120px;
+            justify-content: center;
+        }
         .viber { background: #7360f2; } 
         .whatsapp { background: #25D366; }
         .email-btn { background: #e74c3c; }
         
-        footer { padding: 20px 20px 180px; color: #7f8c8d; font-size: 14px; }
+        footer { padding: 40px 20px 180px; text-align: center; color: #7f8c8d; font-size: 14px; background: #1a252f; }
     </style>
 </head>
 <body>
@@ -94,39 +97,47 @@
         <p style="color: #3498db; font-weight: bold; letter-spacing: 2px;">SIGURNOST • KVALITET • DIZAJN</p>
     </div>
 
-    <h2 class="category-title">Inox Ograde</h2>
-    <div class="gallery-container">
-        <div class="card" onclick="openLightbox('inox1.jpg')"><div class="img-box"><img src="inox1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+1'"></div></div>
-        <div class="card" onclick="openLightbox('inox2.jpg')"><div class="img-box"><img src="inox2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+2'"></div></div>
-        <div class="card" onclick="openLightbox('inox3.jpg')"><div class="img-box"><img src="inox3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+3'"></div></div>
+    <div class="sekcija">
+        <h2 class="category-title">Inox Ograde</h2>
+        <div class="gallery-container">
+            <div class="card" onclick="openLightbox('inox1.jpg')"><div class="img-box"><img src="inox1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+1'"></div></div>
+            <div class="card" onclick="openLightbox('inox2.jpg')"><div class="img-box"><img src="inox2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+2'"></div></div>
+            <div class="card" onclick="openLightbox('inox3.jpg')"><div class="img-box"><img src="inox3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Inox+3'"></div></div>
+        </div>
     </div>
 
-    <h2 class="category-title">Panelne Ograde</h2>
-    <div class="gallery-container">
-        <div class="card" onclick="openLightbox('panel1.jpg')"><div class="img-box"><img src="panel1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+1'"></div></div>
-        <div class="card" onclick="openLightbox('panel2.jpg')"><div class="img-box"><img src="panel2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+2'"></div></div>
-        <div class="card" onclick="openLightbox('panel3.jpg')"><div class="img-box"><img src="panel3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+3'"></div></div>
+    <div class="sekcija">
+        <h2 class="category-title">Panelne Ograde</h2>
+        <div class="gallery-container">
+            <div class="card" onclick="openLightbox('panel1.jpg')"><div class="img-box"><img src="panel1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+1'"></div></div>
+            <div class="card" onclick="openLightbox('panel2.jpg')"><div class="img-box"><img src="panel2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+2'"></div></div>
+            <div class="card" onclick="openLightbox('panel3.jpg')"><div class="img-box"><img src="panel3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Panel+3'"></div></div>
+        </div>
     </div>
 
-    <h2 class="category-title">Alu Ograde</h2>
-    <div class="gallery-container">
-        <div class="card" onclick="openLightbox('alu1.jpg')"><div class="img-box"><img src="alu1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+1'"></div></div>
-        <div class="card" onclick="openLightbox('alu2.jpg')"><div class="img-box"><img src="alu2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+2'"></div></div>
-        <div class="card" onclick="openLightbox('alu3.jpg')"><div class="img-box"><img src="alu3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+3'"></div></div>
+    <div class="sekcija">
+        <h2 class="category-title">Alu Ograde</h2>
+        <div class="gallery-container">
+            <div class="card" onclick="openLightbox('alu1.jpg')"><div class="img-box"><img src="alu1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+1'"></div></div>
+            <div class="card" onclick="openLightbox('alu2.jpg')"><div class="img-box"><img src="alu2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+2'"></div></div>
+            <div class="card" onclick="openLightbox('alu3.jpg')"><div class="img-box"><img src="alu3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Alu+3'"></div></div>
+        </div>
     </div>
 
-    <h2 class="category-title">Staklene Ograde</h2>
-    <div class="gallery-container">
-        <div class="card" onclick="openLightbox('staklo1.jpg')"><div class="img-box"><img src="staklo1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+1'"></div></div>
-        <div class="card" onclick="openLightbox('staklo2.jpg')"><div class="img-box"><img src="staklo2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+2'"></div></div>
-        <div class="card" onclick="openLightbox('staklo3.jpg')"><div class="img-box"><img src="staklo3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+3'"></div></div>
+    <div class="sekcija">
+        <h2 class="category-title">Staklene Ograde</h2>
+        <div class="gallery-container">
+            <div class="card" onclick="openLightbox('staklo1.jpg')"><div class="img-box"><img src="staklo1.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+1'"></div></div>
+            <div class="card" onclick="openLightbox('staklo2.jpg')"><div class="img-box"><img src="staklo2.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+2'"></div></div>
+            <div class="card" onclick="openLightbox('staklo3.jpg')"><div class="img-box"><img src="staklo3.jpg" onerror="this.src='https://via.placeholder.com/300x220?text=Staklo+3'"></div></div>
+        </div>
     </div>
 
-    <div style="padding: 40px 20px;">
+    <div class="sekcija">
         <h2>Gdje se nalazimo?</h2>
-        <p><i class="fas fa-map-marker-alt"></i> Tinja Donja, Srebrenik</p>
+        <p>Tinja Donja, Srebrenik</p>
         <div class="mapa-okvir">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11413.564551717255!2d18.47353985!3d44.44565775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759495092686851%3A0x6a0c9616e252445d!2sTinja%20Donja!5e0!3m2!1sbs!2sba!4v1700000000000" 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.2345!2d18.4735!3d44.6985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDQxJzU0LjYiTiAxOMKwMjgnMjQuNiJF!5e0!3m2!1sbs!2sba!4v1700000000000" 
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
